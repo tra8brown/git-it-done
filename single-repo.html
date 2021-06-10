@@ -12,20 +12,33 @@
 <body class="flex-column min-100-vh">
     <header class="hero">
         <h1 class="app-title">Showing Issues for: <span id="repo-name"></span></h1>
-
-        <div>
-            <a href="./index.html" class="btn-back">
-        Go Back
-      </a>
-        </div>
-
+        <p>Search for a gitHub user or clikc on a language to see a list of repositories and how many open issues they have!</p>
     </header>
 
-    <main>
-        <div id="issues-container" class="list-group">
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search By User</h3>
+                <form id="user-form" class="card-body">
+                    <label class="form-label" for="username">Username</label>
+                    <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn">Get User</button>
+                </form>
+            </div>
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search By Topic</h3>
+                <div id="language-buttons" class="card-body">
+                    <button data-language="javascript" class="btn">JavaScript</button>
+                    <button data-language="html" class="btn">HTML</button>
+                    <button data-language="css" class="btn">CSS</button>
+                </div>
+            </div>
         </div>
-        <div id="limit-warning">
+        <div class="col-12 col-md-8">
+            <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
+            <div id="repos-container" class="list-group">
 
+            </div>
         </div>
     </main>
     <script src="./assets/js/single.js"></script>
